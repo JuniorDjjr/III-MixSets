@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="MixSetsIII.cpp" />
+    <ClCompile Include="ReadIni.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MixSetsIII.h" />
+    <ClInclude Include="IniReader\ini_parser.hpp">
+      <Filter>IniReader</Filter>
+    </ClInclude>
+    <ClInclude Include="IniReader\IniReader.h">
+      <Filter>IniReader</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadIni.h" />
+    <ClInclude Include="TestCheat.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="IniReader">
+      <UniqueIdentifier>{ce0353bd-5ef6-47c4-9bbf-538a37be4d05}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
