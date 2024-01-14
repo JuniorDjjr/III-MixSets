@@ -26,7 +26,7 @@ void MixSetsIII::ReadIni_BeforeFirstFrame()
 
 
 	if (ini.data.size() <= 0) {
-		lg << "\nERROR: MixSets.ini not found - MixSets.ini não encontrado \n";
+		lg << "\nERROR: MixSets.ini not found - MixSets.ini nÃ£o encontrado \n";
 		bIniFailed = true;
 		return;
 	} bIniFailed = false;
@@ -40,7 +40,7 @@ void MixSetsIII::ReadIni_BeforeFirstFrame()
 	else {
 		bReadOldINI = true;
 		if (lang == languages::PT)
-			lg << "\n'MixSets old.ini' encontrado. As configurações serão movidas para o 'MixSets.ini'.\n\n";
+			lg << "\n'MixSets old.ini' encontrado. As configuraÃ§Ãµes serÃ£o movidas para o 'MixSets.ini'.\n\n";
 		else
 			lg << "\n'MixSets old.ini' found. The settings will be moved to 'MixSets.ini'.\n\n";
 	}
@@ -84,7 +84,7 @@ void MixSetsIII::ReadIni_BeforeFirstFrame()
 	if (gameVersion != GAME_10EN)
 	{
 		if (lang == languages::PT)
-			lg << "\nERROR: O executável do seu jogo não é compatível. Use Crack 1.0.\n";
+			lg << "\nERROR: O executÃ¡vel do seu jogo nÃ£o Ã© compatÃ­vel. Use Crack 1.0.\n";
 		else
 			lg << "\nERROR: Your game executable isn't compatible. Use Crack 1.0.\n";
 		bVersionFailed = true;
@@ -235,8 +235,8 @@ void MixSetsIII::ReadIni()
 
 	if (ReadIniFloat(ini, &lg, "Gameplay", "WheelTurnSpeed", &f)) {
 		G_WheelTurnSpeed = f;
-		WriteMemory<float*>(0x53B85A + 2, &G_WheelTurnSpeed, false);
-		WriteMemory<float*>(0x53B8B4 + 2, &G_WheelTurnSpeed, false);
+		WriteMemory<float*>(0x53B85A + 2, &G_WheelTurnSpeed, true);
+		WriteMemory<float*>(0x53B8B4 + 2, &G_WheelTurnSpeed, true);
 	}
 
 	if (ReadIniBool(ini, &lg, "Gameplay", "NoWayForSiren")) {
@@ -385,7 +385,7 @@ void MixSetsIII::ReadIni()
 		if (numOldCfgNotFound > 0)
 		{
 			if (lang == languages::PT)
-				lg << "\nAviso: " << numOldCfgNotFound << " configurações não foram encontradas no .ini antigo. Verifique acima.\n";
+				lg << "\nAviso: " << numOldCfgNotFound << " configuraÃ§Ãµes nÃ£o foram encontradas no .ini antigo. Verifique acima.\n";
 			else
 				lg << "\nWarning: " << numOldCfgNotFound << " configurations has not found on old ini. Check it above.\n";
 		}
@@ -398,7 +398,7 @@ void MixSetsIII::ReadIni()
 		catch (std::filesystem::filesystem_error& e) {
 			if (lang == languages::PT)
 			{
-				lg << "\nERRO: Não foi possível renomear o arquivo 'MixSets old.ini'. Provavelmente você está com o jogo instalado na pasta Arquivos de Programas ou o arquivo está em uso.\n";
+				lg << "\nERRO: NÃ£o foi possÃ­vel renomear o arquivo 'MixSets old.ini'. Provavelmente vocÃª estÃ¡ com o jogo instalado na pasta Arquivos de Programas ou o arquivo estÃ¡ em uso.\n";
 				lg << "Mova seu jogo para outra pasta para o melhor funcionamento deste e outros mods. Ou verifique o arquivo, tente de novo, renomei-o ou delete-o manualmente.\n";
 			}
 			else {
